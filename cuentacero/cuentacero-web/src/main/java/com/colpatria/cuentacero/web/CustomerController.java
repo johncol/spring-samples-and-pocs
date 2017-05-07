@@ -10,16 +10,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    @Autowired
-    private CustomerService customerService;
+  @Autowired
+  private CustomerService customerService;
 
-    @GetMapping("/")
-    public String getCustomers() {
-        return this.customerService
-                .getCustomers()
-                .stream()
-                .reduce(new StringBuilder(), StringBuilder::append, StringBuilder::append)
-                .toString();
-    }
+  @GetMapping("/")
+  public Object getCustomers() {
+    return this.customerService.getCustomers();
+  }
+
+  @GetMapping("/as-string")
+  public String getCustomersAsString() {
+    return this.customerService
+        .getCustomers()
+        .stream()
+        .reduce(new StringBuilder(), StringBuilder::append, StringBuilder::append)
+        .toString();
+  }
+
 
 }

@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-public class RestConfiguration {
+public class RestClientConfiguration {
 
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
-        return restTemplateBuilder.build();
-    }
+  @Bean
+  public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
+    return restTemplateBuilder.build();
+  }
 }

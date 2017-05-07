@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>cuentacero</artifactId>
-        <groupId>com.colpatria.cuentacero</groupId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <artifactId>cuentacero-web</artifactId>
+  <parent>
+    <artifactId>cuentacero</artifactId>
+    <groupId>com.colpatria.cuentacero</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+  <artifactId>cuentacero-web</artifactId>
 
-        <dependency>
-            <groupId>com.colpatria.cuentacero</groupId>
-            <artifactId>cuentacero-repository</artifactId>
-            <version>${application.version}</version>
-        </dependency>
-    </dependencies>
-
+  <dependencies>
+    <dependency>
+      <groupId>com.colpatria.cuentacero</groupId>
+      <artifactId>cuentacero-core</artifactId>
+      <version>${application.version}</version>
+    </dependency>
+  </dependencies>
 
 </project>
