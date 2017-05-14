@@ -13,6 +13,10 @@
   <artifactId>cuentacero-core</artifactId>
   <dependencies>
     <dependency>
+      <groupId>org.springframework.ws</groupId>
+      <artifactId>spring-ws-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.colpatria.cuentacero</groupId>
       <artifactId>cuentacero-repository</artifactId>
       <version>${application.version}</version>

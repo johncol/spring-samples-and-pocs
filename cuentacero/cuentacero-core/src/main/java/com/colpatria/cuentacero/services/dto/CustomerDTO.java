@@ -1,6 +1,7 @@
 package com.colpatria.cuentacero.services.dto;
 
 public class CustomerDTO {
+
     private Long id;
     private String name;
 

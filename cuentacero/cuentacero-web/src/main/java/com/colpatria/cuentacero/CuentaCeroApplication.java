@@ -1,12 +1,14 @@
 package com.colpatria.cuentacero;
 
 import com.colpatria.cuentacero.config.SampleConfiguration;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+@Log
 @SpringBootApplication
 public class CuentaCeroApplication {
 
@@ -18,8 +20,7 @@ public class CuentaCeroApplication {
   @Autowired
   public CommandLineRunner printSampleConfiguration(SampleConfiguration sampleConfiguration) {
     return args -> {
-      System.out.println("---------------------------------------------------");
-      System.out.println(sampleConfiguration);
+      log.warning(sampleConfiguration.toString());
     };
   }
 }

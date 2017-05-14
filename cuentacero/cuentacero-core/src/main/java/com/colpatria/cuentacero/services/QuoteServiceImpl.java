@@ -1,6 +1,9 @@
 package com.colpatria.cuentacero.services;
 
+import com.colpatria.cuentacero.clients.quote.QuoteClient;
+import com.colpatria.cuentacero.clients.wsdl.GetQuoteResponse;
 import com.colpatria.cuentacero.services.models.Quote;
+import com.colpatria.cuentacero.services.models.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,9 @@ public class QuoteServiceImpl implements QuoteService {
   @Autowired
   private RestTemplate restTemplate;
 
+  @Autowired
+  private QuoteClient quoteClient;
+
   @Override
   public Quote restQuote() {
     Quote quote = restTemplate.getForObject(REST_ENDPOINT, Quote.class);
@@ -27,6 +33,8 @@ public class QuoteServiceImpl implements QuoteService {
 
   @Override
   public Quote soapQuote() {
-    return null;
+    GetQuoteResponse quote = quoteClient.getQuote("X");
+    String result = quote.getGetQuoteResult();
+    return new Quote("jmm", new Value(1L, result));
   }
 }
